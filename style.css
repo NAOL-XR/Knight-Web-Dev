@@ -1,0 +1,1057 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+/* ==============================
+   KNIGHT'S LETTER — VINTAGE STYLE
+   ============================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at center, #4a3522 0%, #21150e 55%, #0d0906 100%);
+
+    color: #2d1b10;
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow-x: hidden;
+overflow-y: auto;
+}
+
+.letter-world {
+    width: min(900px, 92vw);
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.opening {
+    position: relative;
+
+    width: min(700px, 100%);
+    min-height: 620px;
+
+    padding: 90px 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(245, 230, 191, 0.96),
+            rgba(216, 190, 140, 0.96)
+        );
+
+    border: 1px solid rgba(91, 56, 27, 0.5);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55),
+        inset 0 0 80px rgba(102, 66, 32, 0.16);
+
+    border-radius: 4px;
+
+    animation: letterAppear 1.8s ease forwards;
+}
+
+/* aged paper edges */
+
+.opening::before,
+.opening::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+
+    border: 1px solid rgba(93, 55, 24, 0.18);
+
+    pointer-events: none;
+}
+
+.opening::after {
+    inset: 24px;
+    border-style: dashed;
+    opacity: 0.35;
+}
+
+/* subtle paper texture */
+
+.opening {
+    background-image:
+        radial-gradient(
+            rgba(88, 53, 25, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(245, 230, 191, 0.96),
+            rgba(216, 190, 140, 0.96)
+        );
+
+    background-size: 8px 8px, auto;
+}
+
+.wax-seal {
+    width: 86px;
+    height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 28px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #9d3535,
+            #681b1b 60%,
+            #3d0f0f 100%
+        );
+
+    color: #f5dfad;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.35),
+        inset 3px 3px 7px rgba(255, 255, 255, 0.12),
+        inset -4px -5px 8px rgba(0, 0, 0, 0.28);
+
+    animation: sealFloat 4s ease-in-out infinite;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: #795632;
+}
+
+h1 {
+    margin-bottom: 28px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(42px, 7vw, 76px);
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    color: #2b1a0e;
+
+    text-shadow:
+        1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+.intro {
+    max-width: 500px;
+
+    margin-bottom: 38px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(20px, 3vw, 28px);
+
+    line-height: 1.8;
+
+    font-style: italic;
+
+    color: #49301c;
+}
+
+
+#openLetterButton {
+    padding: 15px 36px;
+
+    border: 1px solid #6b4425;
+    border-radius: 2px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f0ddb2,
+            #d9bd83
+        );
+
+    color: #352012;
+
+    font-family: "Cinzel", serif;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+#openLetterButton:hover {
+    transform: translateY(-3px);
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f5e4bd,
+            #e0c78f
+        );
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+#openLetterButton:active {
+    transform: translateY(0);
+}
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes sealFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(2deg);
+    }
+}
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+        align-items: flex-start;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .letter-world {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .opening {
+        width: 100%;
+        min-height: calc(100vh - 20px);
+        padding: 55px 18px 35px;
+        border-radius: 4px;
+    }
+
+    .wax-seal {
+        width: 68px;
+        height: 68px;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    h1 {
+        font-size: clamp(30px, 10vw, 44px);
+        line-height: 1.15;
+    }
+
+    .intro {
+        width: 100%;
+        max-width: 340px;
+        font-size: 19px;
+        line-height: 1.55;
+    }
+
+    .answer-buttons {
+        width: 100%;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .yes-button,
+    .no-button {
+        width: min(250px, 90%);
+    }
+
+    #datePicker,
+    #timePicker,
+    #ladyName {
+        width: min(300px, 90%);
+        max-width: 100%;
+    }
+
+    .date-type-buttons {
+        width: 100%;
+        max-width: 340px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .date-type {
+        width: 100%;
+        min-height: 88px;
+    }
+
+    .final-letter {
+        width: 100%;
+        padding: 38px 20px;
+    }
+
+    .final-text {
+        font-size: 17px;
+        line-height: 1.65;
+    }
+
+    #finishButton {
+        width: min(280px, 90%);
+        font-size: 13px;
+        padding: 14px 18px;
+    }
+
+    .waiting-scene {
+        width: 100%;
+        min-height: calc(100vh - 20px);
+        padding: 40px 18px 28px;
+    }
+
+    .waiting-scene h1 {
+        font-size: clamp(30px, 9vw, 42px);
+    }
+
+    .waiting-scene .intro {
+        font-size: 18px;
+    }
+
+    .waiting-message {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .waiting-details {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .waiting-details span {
+        font-size: 12px;
+        padding: 8px 11px;
+        max-width: 100%;
+    }
+
+    .signature {
+        font-size: 20px;
+    }
+
+    .postscript {
+        font-size: 16px;
+    }
+}
+
+.waiting-scene {
+    position: relative;
+    width: 100%;
+    min-height: 620px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 70px 40px 55px;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(12, 7, 4, 0.92),
+            rgba(12, 7, 4, 0.18)
+        ),
+        url("assets/knight-waiting.png") center center / cover no-repeat;
+
+    color: #f3dfb5;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.6);
+
+    text-align: center;
+}
+
+.waiting-scene::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.12),
+            rgba(0, 0, 0, 0.72)
+        );
+
+    pointer-events: none;
+}
+
+.waiting-scene {
+    animation: waitingSceneAppear 1.6s ease forwards;
+}
+
+@keyframes waitingSceneAppear {
+    from {
+        opacity: 0;
+        transform: scale(1.03);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.waiting-scene > * {
+    position: relative;
+    z-index: 2;
+}
+
+.waiting-scene .eyebrow {
+    color: #e6c98e;
+}
+
+.waiting-scene h1 {
+    color: #f8e7bf;
+    margin-bottom: 20px;
+}
+
+.waiting-scene .intro {
+    color: #f1dfbb;
+    max-width: 650px;
+}
+
+.waiting-message {
+    max-width: 600px;
+    margin-top: 12px;
+    margin-bottom: 25px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #ead3a4;
+}
+
+.waiting-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.waiting-details span {
+    padding: 10px 18px;
+
+    border: 1px solid rgba(235, 211, 164, 0.45);
+    background: rgba(34, 20, 11, 0.45);
+
+    border-radius: 3px;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.waiting-knight {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    .waiting-scene {
+        min-height: 88vh;
+        padding: 50px 24px 35px;
+    }
+
+    .waiting-details {
+        gap: 8px;
+    }
+
+    .waiting-details span {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
+.waiting-scene {
+    background-size: cover;
+    animation: waitingSceneAppear 1.2s ease forwards;
+}
+
+@keyframes waitingZoom {
+    from {
+        background-size: 105% auto;
+    }
+
+    to {
+        background-size: 115% auto;
+    }
+}
+.waiting-details span {
+    opacity: 0;
+    transform: translateY(12px);
+
+    animation: detailReveal 0.8s ease forwards;
+}
+
+.waiting-details span:nth-child(1) {
+    animation-delay: 0.6s;
+}
+
+.waiting-details span:nth-child(2) {
+    animation-delay: 0.9s;
+}
+
+.waiting-details span:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+.signature {
+    opacity: 0;
+    animation: signatureReveal 1s ease 1.6s forwards;
+}
+
+.postscript {
+    opacity: 0;
+    animation: postscriptReveal 1s ease 2.1s forwards;
+}
+
+@keyframes detailReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes signatureReveal {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes postscriptReveal {
+    to {
+        opacity: 1;
+    }
+}
+.wax-seal {
+    animation:
+        sealFloat 4s ease-in-out infinite,
+        sealGlow 3s ease-in-out infinite;
+}
+
+@keyframes sealGlow {
+    0%,
+    100% {
+        filter: brightness(1);
+        transform: scale(1);
+    }
+
+    50% {
+        filter: brightness(1.12);
+        transform: scale(1.04);
+    }
+}
+.opening::marker {
+    display: none;
+}
+
+.opening {
+    animation:
+        letterAppear 1.8s ease forwards,
+        paperGlow 5s ease-in-out infinite;
+}
+
+@keyframes paperGlow {
+    0%,
+    100% {
+        box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.55),
+            inset 0 0 80px rgba(102, 66, 32, 0.16);
+    }
+
+    50% {
+        box-shadow:
+            0 25px 80px rgba(0, 0, 0, 0.6),
+            inset 0 0 100px rgba(130, 82, 35, 0.24);
+    }
+}
+.answer-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    margin-top: 20px;
+}
+
+.yes-button,
+.no-button {
+    padding: 14px 30px;
+
+    border-radius: 3px;
+
+    font-family: Georgia, serif;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.yes-button {
+    border: 1px solid #6b2a22;
+
+    background: #8f3028;
+    color: #f7e6c0;
+
+    box-shadow:
+        0 8px 20px rgba(65, 18, 12, 0.3);
+}
+
+.yes-button:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 12px 26px rgba(65, 18, 12, 0.4);
+}
+
+.no-button {
+    border: 1px solid #6b543c;
+
+    background: #e0cba2;
+    color: #3d2919;
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.16);
+
+    position: relative;
+}
+
+.no-button:hover {
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.22);
+}
+#datePicker,
+#timePicker {
+    width: min(280px, 80%);
+
+    padding: 14px 16px;
+    margin: 10px 0 25px;
+
+    border: 1px solid #8a6844;
+    border-radius: 3px;
+
+    background: rgba(246, 229, 190, 0.92);
+    color: #352012;
+
+    font-family: Georgia, serif;
+    font-size: 17px;
+
+    text-align: center;
+
+    outline: none;
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.12);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+#datePicker:focus,
+#timePicker:focus {
+    border-color: #6b4425;
+
+    box-shadow:
+        0 0 0 3px rgba(139, 98, 52, 0.14),
+        0 8px 20px rgba(0, 0, 0, 0.16);
+
+    transform: translateY(-2px);
+}
+.date-type-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    width: min(650px, 90%);
+    margin-top: 20px;
+}
+
+.date-type {
+    min-height: 130px;
+
+    padding: 22px 14px;
+
+    border: 1px solid #8a6844;
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(241, 220, 176, 0.95),
+            rgba(216, 189, 137, 0.95)
+        );
+
+    color: #352012;
+
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.5;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.14);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.date-type:hover {
+    transform: translateY(-5px);
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f3e2bc,
+            #dfc696
+        );
+
+    box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.22);
+}
+
+.date-type:active {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 700px) {
+    .date-type-buttons {
+        grid-template-columns: 1fr;
+        width: min(320px, 90%);
+    }
+
+    .date-type {
+        min-height: 95px;
+    }
+}
+#continueButton,
+#dateButton,
+#timeButton,
+#dateTypeButton,
+#nameButton,
+#sealButton {
+    padding: 14px 32px;
+
+    border: 1px solid #6b4425;
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f0ddb2,
+            #d8bb82
+        );
+
+    color: #352012;
+
+    font-family: Georgia, serif;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.16);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+#continueButton:hover,
+#dateButton:hover,
+#timeButton:hover,
+#dateTypeButton:hover,
+#nameButton:hover,
+#sealButton:hover {
+    transform: translateY(-3px);
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f5e4bd,
+            #e0c68f
+        );
+
+    box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.24);
+}
+
+#continueButton:active,
+#dateButton:active,
+#timeButton:active,
+#dateTypeButton:active,
+#nameButton:active,
+#sealButton:active {
+    transform: translateY(0);
+}
+#ladyName {
+    width: min(340px, 82%);
+
+    padding: 15px 18px;
+    margin: 12px 0 24px;
+
+    border: 1px solid #8a6844;
+    border-radius: 3px;
+
+    background: rgba(246, 229, 190, 0.94);
+    color: #352012;
+
+    font-family: Georgia, serif;
+    font-size: 18px;
+
+    text-align: center;
+
+    outline: none;
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.12);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+#ladyName::placeholder {
+    color: #795632;
+    opacity: 0.75;
+}
+
+#ladyName:focus {
+    border-color: #6b4425;
+
+    box-shadow:
+        0 0 0 3px rgba(139, 98, 52, 0.14),
+        0 10px 22px rgba(0, 0, 0, 0.16);
+
+    transform: translateY(-2px);
+}
+.final-letter {
+    width: min(650px, 92%);
+    padding: 55px 45px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(244, 227, 186, 0.97),
+            rgba(218, 192, 143, 0.97)
+        );
+
+    border: 1px solid rgba(91, 56, 27, 0.45);
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.35),
+        inset 0 0 60px rgba(102, 66, 32, 0.12);
+
+    animation: finalLetterAppear 1.2s ease forwards;
+}
+
+.letter-to {
+    margin-bottom: 28px;
+
+    font-family: "Cinzel", serif;
+    font-size: 24px;
+
+    color: #5a381f;
+}
+
+.final-text {
+    max-width: 520px;
+    margin: 0 auto 22px;
+
+    font-family: Georgia, serif;
+    font-size: 19px;
+    line-height: 1.8;
+
+    color: #49301c;
+}
+
+.final-text strong {
+    color: #6b2d22;
+}
+
+.final-seal {
+    margin: 0 auto 24px;
+}
+
+.final-letter .signature {
+    margin-top: 30px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px;
+    font-style: italic;
+
+    color: #4b2f1a;
+}
+
+.final-letter .postscript {
+    margin-top: 24px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    font-style: italic;
+
+    color: #795632;
+}
+
+#finishButton {
+    margin-top: 28px;
+
+    padding: 15px 30px;
+
+    border: 1px solid #6b4425;
+    border-radius: 3px;
+
+    background: #8f3028;
+    color: #f8e7bf;
+
+    font-family: "Cinzel", serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(65, 18, 12, 0.28);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#finishButton:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 13px 28px rgba(65, 18, 12, 0.38);
+}
+
+@keyframes finalLetterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+@media (max-width: 600px) {
+
+    body {
+        align-items: flex-start;
+        justify-content: center;
+        padding: 12px;
+    }
+
+    .letter-world {
+        width: 100%;
+        min-height: auto;
+        padding: 8px;
+    }
+
+    .opening {
+        width: 100%;
+        min-height: 92vh;
+        padding: 55px 22px;
+    }
+
+    h1 {
+        font-size: clamp(32px, 10vw, 48px);
+        line-height: 1.15;
+    }
+
+    .intro {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .answer-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .yes-button,
+    .no-button {
+        width: min(260px, 90%);
+    }
+
+    .date-type-buttons {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .date-type {
+        min-height: 90px;
+    }
+
+    .waiting-scene {
+        min-height: 92vh;
+        padding: 45px 18px 30px;
+    }
+
+    .final-letter {
+        width: 100%;
+        padding: 40px 22px;
+    }
+}
